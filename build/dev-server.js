@@ -24,6 +24,8 @@ var app = express()
 
 var RecommendAD = require('../api/RecommendAD.json')
 var RecommendList = require('../api/Recommend.json')
+var ReCategory = require('../api/ReCategory.json')
+var ReSpecial = require('../api/ReSpecial.json')
 
  
 var router = express.Router();
@@ -39,6 +41,20 @@ router.get('/RecommendList',function(req,resp){
       resp.json({
         errno:0,
         data:RecommendList
+      })
+})
+
+router.get('/ReCategory',function(req,resp){
+      resp.json({
+        errno:0,
+        data:ReCategory
+      })
+})
+
+router.get('/ReSpecial',function(req,resp){
+      resp.json({
+        errno:0,
+        data:ReSpecial
       })
 })
 
