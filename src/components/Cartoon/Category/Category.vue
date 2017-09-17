@@ -1,6 +1,6 @@
 <template>
   <div id="category">
-
+		类别页面
   </div>
 </template>
 

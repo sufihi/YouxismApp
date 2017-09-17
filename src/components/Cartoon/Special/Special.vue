@@ -1,6 +1,6 @@
 <template>
   <div id="special">
-
+		专题页面
   </div>
 </template>
 

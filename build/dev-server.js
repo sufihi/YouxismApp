@@ -21,6 +21,30 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 var proxyTable = config.dev.proxyTable
 
 var app = express()
+
+var RecommendAD = require('../api/RecommendAD.json')
+var RecommendList = require('../api/Recommend.json')
+
+ 
+var router = express.Router();
+
+router.get('/RecommendAD',function(req,resp){
+      resp.json({
+        errno:0,
+        data:RecommendAD
+      })
+})
+
+router.get('/RecommendList',function(req,resp){
+      resp.json({
+        errno:0,
+        data:RecommendList
+      })
+})
+
+app.use('/api',router)
+
+
 var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {

@@ -1,12 +1,17 @@
 <template>
   <div id="cartoon">
-		漫画
+		<CartoonNav></CartoonNav>
+		<keep-alive>
+			<router-view></router-view>
+		</keep-alive>
+
   </div>
 </template>
 
 <script>
+import CartoonNav from './CartoonNav'
 	export default {
-	  
+	  	components:{CartoonNav}
 	}
 </script>
 

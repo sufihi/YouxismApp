@@ -16,6 +16,12 @@ Vue.use(VueAwesomeSwiper)
 Vue.prototype.$http = axios;
 Vue.config.productionTip = false
 
+// if(true){
+// 	window.apiAddress = 'http://localhost:3000'
+// }else{
+// 	window.apiAddress = 'http://192.168.1.105:3000'
+// }
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
