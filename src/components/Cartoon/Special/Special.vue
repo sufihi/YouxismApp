@@ -1,6 +1,11 @@
 <template>
   <div id="special">
 		<div class="sun">
+			<ul>
+				<li v-for="item in SpecialSun">
+					<img :src="item.image" alt="">
+				</li>
+			</ul>
 		</div>
 		<div class="list">
 			<ul>
@@ -17,6 +22,7 @@
 		data(){
 			return {
 				SpecialList:[],
+				SpecialSun:[]
 			}
 		},
 	  created(){
@@ -24,6 +30,7 @@
 	            response=response.data;
 	            if(response.errno==0){
 	                this.SpecialList=response.data.data;
+	                this.SpecialSun=response.data.sun;
 	            }
 	        })
 		}
@@ -33,7 +40,24 @@
 <style lang="scss" scoped>
 	#special{
 		.sun{
-			height:200px;
+			padding:5px;
+			margin-bottom:20px;
+			ul{
+				display: flex;
+				flex-wrap:wrap;
+				li{
+					width:50%;
+					// border:1px solid rgba(200, 200,200,0.1);
+					display: flex;
+					flex-direction:column;
+					padding: 4px;
+					font-size:12px;
+					img{
+						border-radius:8px;
+					}
+
+				}
+			}
 		}
 		.list{
 			padding:10px;
